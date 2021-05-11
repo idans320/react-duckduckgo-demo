@@ -2,7 +2,7 @@ import React from 'react'
 import Search from "./searchComponent"
 import {Container,Col,Row} from "react-bootstrap"
 
-function HeaderComponent() {
+function HeaderComponent(props) {
     return (
         <header className="App-header">
         <Container>
@@ -12,8 +12,8 @@ function HeaderComponent() {
             </Col>
           </Row>
           <Row className = "row d-flex mt-3 justify-content-center">
-            <Col className= "col-md-6 header">
-              <Search></Search>
+            <Col className= "col-md-7 header">
+              <Search/>
             </Col>
           </Row>
         </Container>

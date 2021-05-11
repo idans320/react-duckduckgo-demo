@@ -9,10 +9,14 @@ body {
     animation: gradient 15s ease infinite;
 }
 
+.page{
+    margin-right: 1%;
+}
+
 header{
  color:white;
  text-align: center;
- padding: 10%;
+ padding: 5%;
 }
 @keyframes gradient {
     0% {
