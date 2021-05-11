@@ -13,8 +13,9 @@ route.post("/history/add", (req,res) => {
     fs.readFile(HISTORY_PATH, (err,data) => {
             if (!err){
                 let currentHistory = JSON.parse(data)
-                currentHistory.push({"value":history_value})
-                fs.writeFile(HISTORY_PATH,JSON.stringify(currentHistory),(err) => {})
+                if (!(currentHistory.map((o) => o.value).includes(history_value)))
+                    currentHistory.push({"id": currentHistory.length ,"value":history_value});
+                fs.writeFile(HISTORY_PATH,JSON.stringify(currentHistory),(err) => {});
                 res.sendStatus(200)
             }
             else{
